@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name : nginx
+        app.kubernetes.io/name: nginx
     spec:
       containers:
       - name: nginx

@@ -1,4 +1,4 @@
-apiVersion: apps/v2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
@@ -9,7 +9,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app.kubernetes.io/name: nginx
   template:
     metadata:
       labels:

@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ steps.get_sha.outputs.SHA_SHORT }}
+          tags: ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.short_sha }}
 
       - name: Install yq
         run: |

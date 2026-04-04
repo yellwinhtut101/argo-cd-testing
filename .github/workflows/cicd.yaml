@@ -44,7 +44,7 @@ jobs:
 
       - name: Update Deployment YAML
         run: |
-          yq e -i '.spec.template.spec.containers[0].image = env(IMAGE_NAME) + ":" + env(SHORT_SHA)' 02-deployment.yaml
+          yq e -i '.spec.template.spec.containers[0].image = "${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.short_sha }}"' 02-deployment.yaml
         working-directory: ./nginx-demo/
 
 
